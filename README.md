@@ -1,15 +1,21 @@
-# Crafix — Railway deployment
+# Crafix — static GitHub Pages prototype
 
-This is a self-contained static prototype served by a small Node.js HTTP server.
+Crafix is a front-end prototype for developing and preparing a book, comic, or graphic novel.
 
-## Deploy on Railway
-1. Create a GitHub repository and upload these files (`index.html`, `package.json`, `server.js`).
-2. In Railway, choose **New Project → Deploy from GitHub repo**.
-3. Select the repository. Railway detects Node.js and runs `npm start`.
-4. In the service settings, open **Networking** and choose **Generate Domain**.
-5. Open the generated `*.up.railway.app` URL.
+## Run locally
 
-No environment variables are required; Railway supplies `PORT`.
+```bash
+npm start
+```
 
-## Prototype limitations
-File selection and upload progress are simulated in the browser; files are not stored on a server. Reviewer chat is local to the current page session. AI manuscript generation, authentication, persistent data, real moderation/review, payments, and distribution to bookstores are not connected. Add secure backend services before accepting real users' manuscripts.
+Then open `http://localhost:3000`.
+
+## Story Reviewer
+
+The Publish flow includes a basic, rules-based Story Reviewer. It examines the story summary and locally selected `.txt` or `.md` files in the browser, then offers simple prompts about story goals, conflict, cause and effect, and endings. The reviewer chat uses predefined guidance based on the question. It does not use an AI model, does not send manuscripts to a server, and does not claim to assess originality or reliably judge dialogue, pacing, or the full quality of a story.
+
+PDF, Word, and image files can be selected and listed, but this static version does not extract their contents. Files are not uploaded or saved to a server. The browser-only review is a starting point, not a substitute for a human editor or reader.
+
+## Other prototype limitations
+
+Authentication, persistent storage, real AI review, payments, moderation, and public distribution to bookstores are not connected. Add secure backend services and appropriate privacy safeguards before accepting real users' manuscripts.
